@@ -6,6 +6,6 @@ return array(
     'connectionString' => 'pgsql:host=localhost;dbname=armico',
     'emulatePrepare' => false,
     'username' => 'postgres',
-    'password' => 'postgres',
+    'password' => 'admin',
     'charset' => 'utf8',
 );

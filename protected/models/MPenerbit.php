@@ -118,4 +118,13 @@ class MPenerbit extends CActiveRecord
 				'pagination'=>false,
 		));
 	}
+
+	public function globalSearch($params){
+        $criteria=new CDbCriteria;
+
+        $criteria->compare('LOWER(penerbit)', strtolower($params),true,'OR');        
+        $models = MPenerbit::model()->findAll($criteria);
+
+        return $models;
+	}
 }

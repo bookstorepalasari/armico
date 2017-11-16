@@ -28,6 +28,8 @@ Class Params{
                     array('label'=>'Supplier', 'url'=>'/supplier'),
                     array('label'=>'Sales', 'url'=>'/sales'),
                     array('label'=>'Kategori Pemakai', 'url'=>'/kategoriPemakai'),
+                    array('label'=>'Golongan', 'url'=>'/golongan'),
+                    array('label'=>'Penerbit', 'url'=>'/penerbit'),
 //                    array('label'=>'Cotoh Template Master', 'url'=>'dashboard/contohMaster'),
                 ),
                 'icon'=>'entypo-book',

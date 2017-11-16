@@ -117,4 +117,15 @@ class MGolongan extends CActiveRecord
 				'pagination'=>false,
 		));
 	}
+
+	public function globalSearch($params){
+        $criteria=new CDbCriteria;
+
+        $criteria->compare('LOWER(golongan)',strtolower($params),true,'OR');
+        
+
+        $models = MGolongan::model()->findAll($criteria);
+
+        return $models;
+	}
 }
