@@ -31,9 +31,9 @@ Yii::app()->clientScript->registerScript('search', "
     </div>
     <div class="col-md-7">
         <?php echo Chtml::link('<i class="entypo-plus"></i> Tambah',$this->createUrl('/barang/create'), array('class'=>'btn btn-flat btn-block btn-primary', 'style' => 'width: 100px; float:left;')); ?>
-        <?php echo Chtml::link('<i class="glyphicon glyphicon-barcode"></i> Cetak Barcode',$this->createUrl('/barang/cetakBarcode'), array('class'=>'btn btn-default','type'=>'button', 'style' => 'width: 130px; margin-left:20px;')); ?>
-        <?php echo Chtml::link('<i class="glyphicon glyphicon-import"></i> Import Excel',$this->createUrl('/barang/ImportExcel'), array('class'=>'btn btn-green disabled','type'=>'button', 'style' => 'width: 120px; margin-left:20px;')); ?>
-        <?php echo Chtml::link('<i class="glyphicon glyphicon-export"></i> Export Excel',$this->createUrl('/barang/ExportExcel'), array('class'=>'btn btn-blue disabled','type'=>'button', 'style' => 'width: 120px; margin-left:20px;')); ?>
+        <?php echo Chtml::link('<i class="glyphicon glyphicon-import"></i> Import Excel',$this->createUrl('/barang/ImportExcel'), array('class'=>'btn btn-green disabled','type'=>'button', 'style' => 'width: 120px; margin-left:10px;')); ?>
+        <?php echo Chtml::link('<i class="glyphicon glyphicon-export"></i> Export Excel',$this->createUrl('/barang/ExportExcel'), array('class'=>'btn btn-blue disabled','type'=>'button', 'style' => 'width: 120px; margin-left:10px;')); ?>
+        <?php echo Chtml::link('<i class="glyphicon glyphicon-barcode"></i> Cetak Barcode Baru','#', array('class'=>'btn btn-default','type'=>'button', 'style' => 'width: 160px; margin-left:10px;','onclick'=>'$("#scanBarcode").dialog("open"); resetInput();')); ?>
     </div> 
 </div>
 <div class="row">
@@ -100,3 +100,37 @@ Yii::app()->clientScript->registerScript('search', "
 		)); ?>
 	</div>
 </div>
+<div style="display: none;">
+<?php
+
+$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+                'id'=>'scanBarcode',
+                'options'=>array(
+                    'title'=>Yii::t('job','Scan Barcode'),
+                    'autoOpen'=>false,
+                    'modal'=>'true',
+                    'width'=>'auto',
+                    'height'=>'auto',
+                ),
+                ));
+ 
+echo $this->renderPartial('scan_barcode', array('model'=>$modBarcode));
+ 
+ $this->endWidget('zii.widgets.jui.CJuiDialog');
+?>
+</div>
+<script type="text/javascript">
+    function resetInput(){
+            $('#HistoryBarcode_barcode').focus();
+            $('#HistoryBarcode_no_isbn').val('');
+            $('#HistoryBarcode_barcode').val('');
+            $('#HistoryBarcode_judul_buku').val('');
+            $('#HistoryBarcode_panjang').val('');
+            $('#HistoryBarcode_penerbit_id').val('');
+            $('#HistoryBarcode_lebar').val('');
+            $('#HistoryBarcode_harga_jual').val('');
+            $('#HistoryBarcode_tahun').val('');
+            $('#HistoryBarcode_edisi').val('');
+            $('.message-required').css('display','none');
+    }
+</script>

@@ -4,7 +4,12 @@
 	'type'=>'horizontal',
 	'focus' => '#mbarang-form div.form-group:first-child div input',
 	'htmlOptions'=>array('class'=>'form-groups-bordered','onKeyPress'=>'return disableKeyPress(event);', 'onsubmit'=>'return requiredCheck(this);', 'enctype' => 'multipart/form-data'),
-)); ?>
+)); 
+if($model->hasErrors()){
+  echo CHtml::errorSummary($model);
+}
+?>
+
 <div class="row">
     <div class="col-md-6">
 	<?php echo $form->textFieldGroup($model,'barcode',array('widgetOptions'=>array('htmlOptions'=>array('class'=>'span5','maxlength'=>100)))); ?>
