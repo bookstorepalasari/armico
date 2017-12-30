@@ -5339,3 +5339,136 @@ Stack trace:
 REQUEST_URI=/armico/index.php?r=barang/create
 in /opt/lampp/htdocs/armico/protected/controllers/BarangController.php (75)
 in /opt/lampp/htdocs/armico/index.php (13)
+2017/11/16 13:07:10 [error] [exception.CException] exception 'CException' with message 'SiteController tidak bisa menemukan view "_jsLogin" yang di-request.' in C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\armico\protected\views\site\login.php(39): CController->renderPartial('_jsLogin', Array)
+#1 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(785): CController->renderPartial('login', Array, true)
+#5 C:\xampp\htdocs\armico\protected\controllers\SiteController.php(116): CController->render('login', Array)
+#6 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#7 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CWebApplication.php(282): CController->run('login')
+#11 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#12 C:\xampp\htdocs\armico\yii-1.1.19\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\armico\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/armico/index.php?r=site/login
+HTTP_REFERER=http://localhost/armico/index.php?r=site/login
+---
+2017/11/16 13:07:28 [error] [exception.CException] exception 'CException' with message 'SiteController tidak bisa menemukan view "_jsLogin" yang di-request.' in C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\armico\protected\views\site\login.php(39): CController->renderPartial('_jsLogin', Array)
+#1 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(785): CController->renderPartial('login', Array, true)
+#5 C:\xampp\htdocs\armico\protected\controllers\SiteController.php(116): CController->render('login', Array)
+#6 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#7 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CWebApplication.php(282): CController->run('login')
+#11 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#12 C:\xampp\htdocs\armico\yii-1.1.19\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\armico\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/armico/index.php?r=site/login
+HTTP_REFERER=http://localhost/armico/index.php?r=site/login
+---
+2017/11/16 13:11:29 [error] [php] Missing argument 1 for CController::createUrl(), called in C:\xampp\htdocs\armico\protected\views\site\_jsLogin.php on line 70 and defined (C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php:962)
+Stack trace:
+#0 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(872): SiteController->renderFile()
+#2 C:\xampp\htdocs\armico\protected\views\site\login.php(39): SiteController->renderPartial()
+#3 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#5 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(872): SiteController->renderFile()
+#6 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(785): SiteController->renderPartial()
+#7 C:\xampp\htdocs\armico\protected\controllers\SiteController.php(116): SiteController->render()
+#8 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(286): SiteController->runAction()
+#11 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#12 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CWebApplication.php(282): SiteController->run()
+#13 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\armico\yii-1.1.19\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\armico\index.php(13): CWebApplication->run()
+REQUEST_URI=/armico/index.php?r=site/login
+in C:\xampp\htdocs\armico\protected\views\site\_jsLogin.php (70)
+in C:\xampp\htdocs\armico\protected\views\site\login.php (39)
+in C:\xampp\htdocs\armico\protected\controllers\SiteController.php (116)
+2017/11/16 13:15:32 [error] [php] Missing argument 1 for CApplication::createUrl(), called in C:\xampp\htdocs\armico\protected\views\site\_jsLogin.php on line 70 and defined (C:\xampp\htdocs\armico\yii-1.1.19\framework\base\CApplication.php:559)
+Stack trace:
+#0 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#1 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(872): SiteController->renderFile()
+#2 C:\xampp\htdocs\armico\protected\views\site\login.php(39): SiteController->renderPartial()
+#3 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#5 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(872): SiteController->renderFile()
+#6 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(785): SiteController->renderPartial()
+#7 C:\xampp\htdocs\armico\protected\controllers\SiteController.php(116): SiteController->render()
+#8 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#9 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(286): SiteController->runAction()
+#11 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#12 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CWebApplication.php(282): SiteController->run()
+#13 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\armico\yii-1.1.19\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\armico\index.php(13): CWebApplication->run()
+REQUEST_URI=/armico/index.php?r=site/login
+in C:\xampp\htdocs\armico\protected\views\site\_jsLogin.php (70)
+in C:\xampp\htdocs\armico\protected\views\site\login.php (39)
+in C:\xampp\htdocs\armico\protected\controllers\SiteController.php (116)
+2017/11/16 13:15:49 [error] [exception.CException] exception 'CException' with message 'CWebUser dan behaviornya tidak memiliki method ataupun closure bernama "createUrl"' in C:\xampp\htdocs\armico\yii-1.1.19\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\armico\protected\views\site\_jsLogin.php(70): CComponent->__call('createUrl', Array)
+#1 C:\xampp\htdocs\armico\protected\views\site\_jsLogin.php(70): CWebUser->createUrl()
+#2 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\armico\protected\views\site\login.php(39): CController->renderPartial('_jsLogin', Array)
+#6 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(785): CController->renderPartial('login', Array, true)
+#10 C:\xampp\htdocs\armico\protected\controllers\SiteController.php(116): CController->render('login', Array)
+#11 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\actions\CInlineAction.php(49): SiteController->actionLogin()
+#12 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CWebApplication.php(282): CController->run('login')
+#16 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CWebApplication.php(141): CWebApplication->runController('site/login')
+#17 C:\xampp\htdocs\armico\yii-1.1.19\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\armico\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/armico/index.php?r=site/login
+---
+2017/11/16 14:31:24 [error] [exception.CException] exception 'CException' with message 'Properti "MBarang.tgl_awal" tidak didefinisikan.' in C:\xampp\htdocs\armico\yii-1.1.19\framework\base\CComponent.php:173
+Stack trace:
+#0 C:\xampp\htdocs\armico\yii-1.1.19\framework\db\ar\CActiveRecord.php(162): CComponent->__set('tgl_awal', '16 Nov 2017')
+#1 C:\xampp\htdocs\armico\protected\views\dashboard\_search_laporan.php(15): CActiveRecord->__set('tgl_awal', '16 Nov 2017')
+#2 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\armico\protected\views\dashboard\laporan.php(36): CController->renderPartial('_search_laporan', Array)
+#6 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#8 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#9 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(785): CController->renderPartial('laporan', Array, true)
+#10 C:\xampp\htdocs\armico\protected\controllers\DashboardController.php(49): CController->render('laporan', Array)
+#11 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\actions\CInlineAction.php(49): DashboardController->actionContohLaporan()
+#12 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CWebApplication.php(282): CController->run('contohLaporan')
+#16 C:\xampp\htdocs\armico\yii-1.1.19\framework\web\CWebApplication.php(141): CWebApplication->runController('dashboard/conto...')
+#17 C:\xampp\htdocs\armico\yii-1.1.19\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\armico\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/armico/index.php?r=dashboard/contohLaporan
+HTTP_REFERER=http://localhost/armico/index.php?r=barang
+---
