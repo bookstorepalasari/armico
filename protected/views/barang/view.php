@@ -19,17 +19,26 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-                /*
-		'id',
-                */
-		'kode',
-		'nama',
-		'rekening',
-		'email',
-		'kontak',
-		'telepon',
-		'alamat',
-		'keterangan',
+                'barcode',
+                'no_isbn',
+                'judul',
+                'penyusun',
+                'jumlah_stok',
+                array(
+                    'name'=>'penerbit_id',
+                    'type'=>'raw',
+                    'value'=>$model->penerbit->penerbit
+                ),
+                array(
+                    'name'=>'golongan_id',
+                    'type'=>'raw',
+                    'value'=>isset($model->golongan_id)?$model->golongan->golongan:""
+                ),
+                'kode_rak',
+                'edisi',
+                'jilid',
+                'tahun',
+                'cover',
 		'create_time',
 		'update_time',
 		'create_login',
