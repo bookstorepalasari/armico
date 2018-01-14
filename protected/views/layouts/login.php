@@ -8,7 +8,7 @@
 	<meta name="author" content="" />
 	
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-
+	<link href="<?php echo Yii::app()->request->baseUrl; ?>/data/images/logo/armico.ico" rel="shortcut icon" type="image/x-icon" />
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/neon/assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/neon/assets/css/font-icons/entypo/css/entypo.css">
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/neon/assets/css/fonts.css">
@@ -19,6 +19,7 @@
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
+ <a href="../../controllers/SiteController.php"></a>
 	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 	<![endif]-->

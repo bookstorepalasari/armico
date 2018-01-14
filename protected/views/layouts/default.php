@@ -7,12 +7,19 @@
 	<meta name="description" content="Neon Admin Panel" />
 	<meta name="author" content="" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
-	<link href="<?php echo Yii::app()->request->baseUrl; ?>/image/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+	<link href="<?php echo Yii::app()->request->baseUrl; ?>/data/images/logo/armico.ico" rel="shortcut icon" type="image/x-icon" />
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/neon/assets/js/jquery-ui/css/no-theme/jquery-ui-1.10.3.custom.min.css">
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/neon/assets/css/font-icons/entypo/css/entypo.css">
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/neon/assets/css/fonts.css">
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/neon/assets/css/neon.css">
 	<link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/themes/neon/assets/css/custom.css">
+	<style type="text/css">
+		body, html{
+			padding:0!important; 
+			margin:0 !important;
+			background:#303641;
+		}
+	</style>
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -21,14 +28,13 @@
 </head>
 <body class="page-body">
 <div class="page-container">	
-	<div class="sidebar-menu">
+	<div class="sidebar-menu clearfix">
 		<header class="logo-env">
 			<!-- logo -->
 			<div class="logo">
 				<a href="<?php echo Yii::app()->request->baseUrl; ?>">
-                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/data/images/logo/logo.jpeg" width="140" alt="" />
-				</a>
-					
+					<img src="<?php echo Yii::app()->request->baseUrl; ?>/data/images/logo/logo-armico.png" width="140" alt="" />
+				</a>					
 			</div>
 			<div class="sidebar-collapse">
 				<a href="#" class="sidebar-collapse-icon with-animation"><!-- add class "with-animation" if you want sidebar to have animation during expanding/collapsing transition -->
@@ -42,7 +48,7 @@
 				</a>
 			</div>			
 		</header>
-		<ul id="main-menu">
+		<ul id="main-menu" class="clearfix">
 			<?php
 				$idModul = ((!empty($this->module->id)) ? $this->module->id : null);
 				$idUser = ((!empty(Yii::app()->user->id)) ? Yii::app()->user->id : null);
@@ -68,8 +74,11 @@
 				</li>
 			<?php } ?>
 		</ul>
+		<div class="clearfix"></div>
 	</div>	
+	<div class="clearfix"></div>
 	<div class="main-content">
+	<div class="clearfix"></div>
 <div class="row">
 <!-- Profile Info and Notifications -->
 <div class="col-md-6 col-sm-8 clearfix">
