@@ -163,7 +163,7 @@ class MBarang extends CActiveRecord
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
-
+            
 		$criteria=$this->criteriaSearch();
                 $criteria->limit=10;
 
@@ -197,10 +197,8 @@ class MBarang extends CActiveRecord
             $criteria->compare('LOWER(penyusun)',strtolower($params),true,'OR');
             $criteria->compare('LOWER(kode_rak)',strtolower($params),true,'OR');
             $criteria->compare('LOWER(cover)',strtolower($params),true,'OR');
-            $criteria->compare('LOWER(kode_rak)',strtolower($params),true,'OR');
             $criteria->compare('LOWER(diskon)',strtolower($params),true,'OR');
             $criteria->compare('LOWER(edisi)',strtolower($params),true,'OR');
-            $criteria->compare('LOWER(cover)',strtolower($params),true,'OR');
             $criteria->addCondition('jumlah_stok',$params,true,'OR');
             $criteria->addCondition('harga_beli',$params,true,'OR');
             $criteria->addCondition('harga_jual',$params,true,'OR');
@@ -214,4 +212,16 @@ class MBarang extends CActiveRecord
 
             return $models;
         }
+        
+	public function exportList()
+	{
+		// Warning: Please modify the following code to remove attributes that
+		// should not be searched.
+            
+		$criteria=$this->criteriaSearch();
+                $criteria->limit=100;
+		return new CActiveDataProvider($this, array(
+			'criteria'=>$criteria,
+		));
+	}
 }
