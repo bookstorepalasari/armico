@@ -24,7 +24,7 @@ class BarangController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','cetakBarcode','printBarcode'),
+				'actions'=>array('create','update','cetakBarcode','printBarcode','exportExcel'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -137,6 +137,7 @@ class BarangController extends Controller
             $this->menu_head = 'List Data Barang';
 		$model=new MBarang('search');
 		$model->unsetAttributes();  // clear any default values
+                $modTemplate = new MBarang();
                 $modBarcode = new HistoryBarcode();
                 $modBarcode->nama_toko = 'ARMICO';
                 $modBarcode->panjang = 3.50;
@@ -163,6 +164,7 @@ class BarangController extends Controller
 		$this->render('admin',array(
 			'model'=>$model,
                         'search'=>isset($search)?$search:'',
+			'modTemplate'=>$modTemplate,
 			'modBarcode'=>$modBarcode
 		));
 	}
@@ -214,5 +216,45 @@ class BarangController extends Controller
                     'model'=>$model
                 )
             );
+        }
+        
+        public function actionExportExcel(){
+            $this->menu_head = 'List Data Barang';
+            $model = new MBarang('exportList');
+            $model->unsetAttributes();  // clear any default values
+                if(Yii::app()->request->isAjaxRequest) {
+                    echo "<pre>";
+                    print_r($_POST);
+                    exit;
+                    // echo CJSON::encode($modBarcode->id);
+                    $this->render('export',array(
+                            'model'=>$model,
+                            'search'=>isset($search)?$search:''
+                    ));
+                }
+                
+		if(isset($_POST['MBarang'])){
+                    $search = isset($_POST['MBarang']['global_search'])?$_POST['MBarang']['global_search']:null;
+                    if($search){
+                        $models = MBarang::model()->globalSearch($search);
+                        if(count($models)>0){
+                            foreach($models as $i=>$model)
+                            {
+                                $attributes = $model->attributeNames();
+                                foreach($attributes as $j=>$attribute) {
+                                        $returnVal[$i]["$attribute"] = $model->$attribute;
+                                }
+                            }
+                                $model->attributes=$returnVal;
+                        }
+                    }else{
+                        $model->unsetAttributes();  // clear any default values
+                    }
+                }
+            
+		$this->render('export',array(
+			'model'=>$model,
+                        'search'=>isset($search)?$search:''
+		));
         }
 }

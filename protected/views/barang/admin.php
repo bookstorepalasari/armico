@@ -32,7 +32,7 @@ Yii::app()->clientScript->registerScript('search', "
     <div class="col-md-7">
         <?php echo Chtml::link('<i class="entypo-plus"></i> Tambah',$this->createUrl('/barang/create'), array('class'=>'btn btn-flat btn-block btn-primary', 'style' => 'width: 100px; float:left;')); ?>
         <?php echo Chtml::link('<i class="glyphicon glyphicon-import"></i> Import Excel',$this->createUrl('/barang/ImportExcel'), array('class'=>'btn btn-green disabled','type'=>'button', 'style' => 'width: 120px; margin-left:10px;')); ?>
-        <?php echo Chtml::link('<i class="glyphicon glyphicon-export"></i> Export Excel',$this->createUrl('/barang/ExportExcel'), array('class'=>'btn btn-blue disabled','type'=>'button', 'style' => 'width: 120px; margin-left:10px;')); ?>
+        <?php echo Chtml::link('<i class="glyphicon glyphicon-export"></i> Export Excel','#', array('class'=>'btn btn-blue','type'=>'button', 'style' => 'width: 120px; margin-left:10px;', 'onclick'=>'$("#modifTemplate").dialog("open");')); ?>
         <?php echo Chtml::link('<i class="glyphicon glyphicon-barcode"></i> Cetak Barcode Baru','#', array('class'=>'btn btn-default','type'=>'button', 'style' => 'width: 160px; margin-left:10px;','onclick'=>'$("#scanBarcode").dialog("open"); resetInput();')); ?>
     </div> 
 </div>
@@ -115,6 +115,23 @@ $this->beginWidget('zii.widgets.jui.CJuiDialog',array(
                 ));
  
 echo $this->renderPartial('scan_barcode', array('model'=>$modBarcode));
+ 
+ $this->endWidget('zii.widgets.jui.CJuiDialog');
+?>
+<?php
+
+$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+                'id'=>'modifTemplate',
+                'options'=>array(
+                    'title'=>Yii::t('job','Modify Template'),
+                    'autoOpen'=>false,
+                    'modal'=>'true',
+                    'width'=>'80%',
+                    'height'=>'auto',
+                ),
+                ));
+ 
+echo $this->renderPartial('modify_template', array('model'=>$modTemplate));
  
  $this->endWidget('zii.widgets.jui.CJuiDialog');
 ?>
