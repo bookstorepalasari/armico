@@ -54,11 +54,11 @@ class LoginForm extends CFormModel
                    // $this->addError('password','Username atau password salah.');
                 } else if ($isValid != 1) {
                    if ($isValid == 404) {
-                       $this->addError('password','<font color=red>Akun Anda tidak aktif, silahkan hubungi Administrator.</font>');
+                       $this->addError('password','Akun Anda tidak aktif, silahkan hubungi Administrator.');
                    } else if($isValid == 403){
-                       $this->addError('password','<font color=red>Akun Anda tidak terdaftar, silahkan hubungi Administrator.</font>');
+                       $this->addError('password','Akun Anda tidak terdaftar, silahkan hubungi Administrator.');
                    } else {
-                       $this->addError('password','<font color=red>Nama pengguna atau kata sandi salah.</font>');
+                       $this->addError('password','Nama pengguna atau kata sandi salah.');
                    }
                }
             }

@@ -33,9 +33,10 @@
 abstract class CBaseUserIdentity extends CComponent implements IUserIdentity
 {
 	const ERROR_NONE=0;
-	const ERROR_USERNAME_INVALID=1;
-	const ERROR_PASSWORD_INVALID=2;
-	const ERROR_UNKNOWN_IDENTITY=100;
+	const ERROR_USERNAME_PASSWORD_INVALID=401;
+	const ERROR_UNKNOWN_IDENTITY=404;
+	const ERROR_USER_REMOVED=403;
+	
 
 	/**
 	 * @var integer the authentication error code. If there is an error, the error code will be non-zero.

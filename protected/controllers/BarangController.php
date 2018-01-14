@@ -24,7 +24,7 @@ class BarangController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','cetakBarcode','printBarcode'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -137,6 +137,10 @@ class BarangController extends Controller
             $this->menu_head = 'List Data Barang';
 		$model=new MBarang('search');
 		$model->unsetAttributes();  // clear any default values
+                $modBarcode = new HistoryBarcode();
+                $modBarcode->nama_toko = 'ARMICO';
+                $modBarcode->panjang = 3.50;
+                $modBarcode->lebar = 1.50;
 		if(isset($_POST['MBarang'])){
                     $search = isset($_POST['MBarang']['global_search'])?$_POST['MBarang']['global_search']:null;
                     if($search){
@@ -158,7 +162,8 @@ class BarangController extends Controller
                 
 		$this->render('admin',array(
 			'model'=>$model,
-                        'search'=>isset($search)?$search:''
+                        'search'=>isset($search)?$search:'',
+			'modBarcode'=>$modBarcode
 		));
 	}
 
@@ -183,10 +188,31 @@ class BarangController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='msupplier-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='mbarang-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
+        
+        public function actionCetakBarcode(){
+            if(Yii::app()->request->isAjaxRequest) {
+                $modBarcode = new HistoryBarcode();
+                $modBarcode->attributes = $_POST;
+                $modBarcode->harga_jual = str_replace(",","",$_POST['harga_jual']);
+                $modBarcode->save();
+                
+                echo CJSON::encode($modBarcode->id);
+            }
+            Yii::app()->end();
+        }
+        
+        public function  actionPrintBarcode(){
+            $model = HistoryBarcode::model()->barcodeData($_GET['id']);
+            
+            $this->renderPartial('print_barcode',array(
+                    'model'=>$model
+                )
+            );
+        }
 }
